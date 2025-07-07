@@ -76,9 +76,13 @@ ul li {
     font-weight: bold;
     
 }
-
+#timer{
+    border: 1.5px dotted red;
+    padding: 8px 10px;
+    background: #FFC9B9;
+}
 .header{
     display: flex;
     align-items: center;
-    gap: 40vh;
+    gap: 55vh;
 }
