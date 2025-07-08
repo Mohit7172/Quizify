@@ -3,12 +3,11 @@ body {
   height: 100vh; 
   display: flex;
   justify-content: center;
-  align-items: center;   
+  align-items: center;  
+  background:  #FEFEE3
    
 }
-body {
-  background: #FEFEE3;
-}
+
 .quiz-section{
     margin-top: 8vh;
     height: 80vh;
@@ -80,9 +79,10 @@ ul li {
     border: 1.5px dotted red;
     padding: 8px 10px;
     background: #FFC9B9;
+    width: 30%;
 }
 .header{
     display: flex;
     align-items: center;
-    gap: 55vh;
+    gap: 40vh;
 }

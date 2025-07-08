@@ -31,8 +31,6 @@ const quizData = [
   }
 ];
 
-
-
 //initialization
 const scores=document.querySelector(".score")
 
@@ -42,12 +40,43 @@ document.querySelectorAll(
    " #question,.option_1,.option_2,.option_3,.option_4"
 );
 const submitBtn= document.querySelector("#submit");
+const timerElm = document.getElementById("timer");
+
 let  currentQuiz =0;
 let score=0;
 
+let timeLeft = 15;
+let timerId;
+
+
+function updateTimerDisplay() {
+    timerElm.innerText = `Time Left: ${timeLeft}s`;
+}
+
+
+function startTimer() {
+    clearInterval(timerId);
+    timeLeft = 15;
+    updateTimerDisplay();
+    timerId = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+            submitBtn.click(); 
+        }
+    }, 1000);
+}
 // load quiz
 
+
+
 const loadQuiz= ()=>{
+    clearInterval(timerId); 
+    timeLeft = 15;
+    updateTimerDisplay();
+    startTimer();
+
     const{question,options}=quizData[currentQuiz];
     console.log(options);
     questionElm.innerText =question;
@@ -71,6 +100,7 @@ const   getSelectedOption= ()=>{
     answerElm.forEach(curElm=> curElm.checked= false);
  }
 submitBtn.addEventListener('click',()=>{
+     clearInterval(timerId);
     selectedOptionIndex = getSelectedOption();
     // console.log(selectedOptionIndex);
 
@@ -99,9 +129,6 @@ submitBtn.addEventListener('click',()=>{
     <button id="reload-button" onclick="location.reload()">Restart Quiz</button>
   </div>
 `;
-
-
-
     }
     
 })
