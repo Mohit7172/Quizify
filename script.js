@@ -48,15 +48,14 @@ let score=0;
 let timeLeft = 15;
 let timerId;
 
-
+// timer fun.
 function updateTimerDisplay() {
     timerElm.innerText = `Time Left: ${timeLeft}s`;
 }
 
-
 function startTimer() {
     clearInterval(timerId);
-    timeLeft = 15;
+    // timeLeft = 15;
     updateTimerDisplay();
     timerId = setInterval(() => {
         timeLeft--;
