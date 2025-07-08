@@ -35,10 +35,16 @@ const quizData = [
 const scores=document.querySelector(".score")
 
 const answerElm = document.querySelectorAll(".answer");
-const [questionElm,option_1,option_2,option_3,option_4] =
-document.querySelectorAll(
-   " #question,.option_1,.option_2,.option_3,.option_4"
-);
+// const [questionElm,option_1,option_2,option_3,option_4] =
+// document.querySelectorAll(
+//    " #question,.option_1,.option_2,.option_3,.option_4"
+// );
+const questionElm = document.querySelector("#question");
+const option_1 = document.querySelector(".option_1");
+const option_2 = document.querySelector(".option_2");
+const option_3 = document.querySelector(".option_3");
+const option_4 = document.querySelector(".option_4");
+
 const submitBtn= document.querySelector("#submit");
 const timerElm = document.getElementById("timer");
 
@@ -66,9 +72,8 @@ function startTimer() {
         }
     }, 1000);
 }
+
 // load quiz
-
-
 
 const loadQuiz= ()=>{
     clearInterval(timerId); 
